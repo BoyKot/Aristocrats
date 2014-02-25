@@ -16,6 +16,12 @@
 
 - (void)viewDidLoad
 {
+    NSString *stream = @"http://www.fockingawesome.com/radio/index.htm";
+    NSURL *url = [NSURL URLWithString:stream];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+
+    [WebView loadRequest:request];
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }

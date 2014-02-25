@@ -199,6 +199,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Overspecial;
 				TargetAttributes = {
+					635B97CA18BCA0D0000963EB = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					635B97EB18BCA0D0000963EB = {
 						TestTargetID = 635B97CA18BCA0D0000963EB;
 					};

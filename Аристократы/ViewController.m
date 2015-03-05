@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController ()
 
@@ -16,7 +17,16 @@
 
 - (void)viewDidLoad
 {
-    NSString *stream = @"http://www.fockingawesome.com/radio/index.htm";
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    BOOL ok;
+    NSError *setCategoryError = nil;
+    ok = [audioSession setCategory:AVAudioSessionCategoryPlayback
+                             error:&setCategoryError];
+    if (!ok) {
+        NSLog(@"%s setCategoryError=%@", __PRETTY_FUNCTION__, setCategoryError);
+    }
+    
+    NSString *stream = @"http://www.overspecial.com/advanced/applications/radio/index.htm";
     NSURL *url = [NSURL URLWithString:stream];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
